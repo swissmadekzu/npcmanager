@@ -11,7 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131029074412) do
+ActiveRecord::Schema.define(version: 20131029082225) do
+
+  create_table "campaigns", force: true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "campaigns", ["user_id"], name: "index_campaigns_on_user_id"
+
+  create_table "npc_groups", force: true do |t|
+    t.string   "name"
+    t.integer  "campaign_id"
+    t.text     "goals"
+    t.text     "powers"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "npc_groups", ["campaign_id"], name: "index_npc_groups_on_campaign_id"
+
+  create_table "npcs", force: true do |t|
+    t.string   "name"
+    t.integer  "campaign_id"
+    t.integer  "npc_group_id"
+    t.text     "description"
+    t.string   "catchphrase"
+    t.text     "temper"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "npcs", ["campaign_id"], name: "index_npcs_on_campaign_id"
+  add_index "npcs", ["npc_group_id"], name: "index_npcs_on_npc_group_id"
 
   create_table "users", force: true do |t|
     t.string   "username",         null: false
