@@ -1,0 +1,8 @@
+#main_nav.row.navbar
+  %h1.four.columns.logo
+    = link_to "RPGTools | NPC Manager", root_path
+  %ul.eight_columns
+    - if logged_in?
+      = render partial: "shared/nav_logged_in"
+    - else
+      = render partial: "shared/nav_logged_out"

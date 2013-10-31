@@ -9,5 +9,11 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require gumby
  *= require_tree .
  */
+
+.main_container {
+  width: 1200px;
+  margin: 0 auto;
+}
