@@ -1,0 +1,9 @@
+%li
+  %h3= link_to campaign.name, campaign_path(campaign)
+  %ul
+    %li
+      Groupes :
+      = campaign.npc_groups.count
+    %li
+      PNJ :
+      = campaign.npcs.count

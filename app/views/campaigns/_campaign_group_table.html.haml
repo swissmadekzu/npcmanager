@@ -1,0 +1,12 @@
+%table.striped
+  %thead
+    %tr
+      %th Nom
+      %th Nombre de PNJ
+      %th Actions
+  %tbody
+    - @campaign.npc_groups.each do |npc_group|
+      %tr
+        %td= npc_group.name
+        %td= npc_group.npcs.count
+        %td

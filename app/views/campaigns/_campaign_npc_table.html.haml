@@ -1,0 +1,13 @@
+%table.striped
+  %thead
+    %tr
+      %th Nom
+      %th Groupe
+      %th Actions
+  %tbody
+    - @campaign.npcs.each do |npc|
+      %tr
+        %td= npc.name
+        %td= npc.npc_group.nil? ? "-" : npc.npc_group.name
+        %td
+      

@@ -1,0 +1,5 @@
+.row
+  - if logged_in?
+    = render partial: "home_logged_in"
+  - else
+    = render partial: "home_logged_out"
