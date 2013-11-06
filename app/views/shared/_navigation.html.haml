@@ -1,7 +1,8 @@
-#main_nav.row.navbar
-  %h1.four.columns.logo
-    = link_to "RPGTools | NPC Manager", root_path
-  %ul.eight_columns
+%nav.top-bar
+  %ul.title-area
+    %li.name
+      %h1= link_to "RPG Tools | Gestionnaire de PNJ", root_path
+  %section.top-bar-section
     - if logged_in?
       = render partial: "shared/nav_logged_in"
     - else

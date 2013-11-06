@@ -44,9 +44,8 @@ end
 # Use unicorn as the app server
 gem 'unicorn'
 
-gem "modernizr-rails"
-gem "gumby-framework"
-
+gem 'compass-rails' # you need this or you get an err
+gem 'zurb-foundation'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 

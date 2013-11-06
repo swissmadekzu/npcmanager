@@ -2,6 +2,8 @@ Npcmanager::Application.routes.draw do
   resources :home
   resources :campaigns
   resources :user_sessions
+  get 'login' => 'user_sessions#new', :as => :login
+  post 'logout' => 'user_sessions#destroy', :as => :logout
   root to: "home#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

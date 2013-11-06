@@ -1,11 +1,16 @@
 .row
-  .twelve.columns
+  .large-12.columns
     %h2= @campaign.name
 .row
-  .twelve.columns
-    %section.tabs
-      %ul.tab-nav
-        %li.active= link_to "PNJs", "#", 'data-no-turbolink' => true
-        %li= link_to "Groupes", "#", 'data-no-turbolink' => true
-      .tab-content.active= render partial: "campaign_npc_table"
-      .tab-content= render partial: "campaign_group_table"
+  .large-12.columns
+    .section-container.auto
+      %section.active
+        %p.title
+          = link_to "PNJs", "#panel1"
+        %div.content
+          = render partial: "campaign_npc_table"
+      %section
+        %p.title
+          = link_to "Groupes", "#panel2"
+        %div.content
+          = render partial: "campaign_group_table"
