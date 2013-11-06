@@ -3,7 +3,7 @@
     %h2= @campaign.name
 .row
   .large-12.columns
-    .section-container.auto
+    .section-container.tabs{data: {section: "tabs"}}
       %section.active
         %p.title
           = link_to "PNJs", "#panel1"

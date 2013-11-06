@@ -1,0 +1,10 @@
+.row
+  .large-12.columns
+    %h1 
+      Editer la campagne
+      = @campaign.name
+.row
+  .large-12.columns
+    = form_for @campaign do |form|
+      = render partial: "campaign_fields", locals: {form: form}
+      = form.submit "Mettre la campagne à jour", class: "button success"

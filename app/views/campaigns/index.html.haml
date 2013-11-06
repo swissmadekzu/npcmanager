@@ -1,0 +1,17 @@
+.row
+  .large-12.columns
+    %h1 Mes campagnes
+.row
+  .large-9.columns
+    .row
+      %table{style: "width: 100%"}
+        %thead
+          %tr
+            %th{width: 350} Nom de la campagne
+            %th{width: 100} PNJs
+            %th{width: 100} Groupes
+            %th Actions
+        %tbody
+          = render partial: "campaign", collection: @campaigns, as: :campaign
+  .large-3.columns
+    %p= link_to "Nouvelle campagne", new_campaign_path, class: "button"

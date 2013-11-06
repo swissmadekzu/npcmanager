@@ -1,8 +1,8 @@
-%table.striped
+%table{style: "width:100%"}
   %thead
     %tr
-      %th Nom
-      %th Nombre de PNJ
+      %th{width: 300} Nom
+      %th{width: 150} Nombre de PNJ
       %th Actions
   %tbody
     - @campaign.npc_groups.each do |npc_group|
@@ -10,3 +10,4 @@
         %td= npc_group.name
         %td= npc_group.npcs.count
         %td
+= link_to "Nouveau groupe de PNJ", "#", class: "button success"

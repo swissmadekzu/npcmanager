@@ -1,0 +1,8 @@
+%tr
+  %td= campaign.name
+  %td= campaign.npcs.count
+  %td= campaign.npc_groups.count
+  %td
+    = link_to "Editer", edit_campaign_path(campaign)
+    |
+    = link_to "Supprimer", campaign_path(campaign), method: :delete, confirm: "Êtes-vous sûr(e) de vouloir supprimer cette campagne ? Tous les groupes et PNJs seront également supprimés"

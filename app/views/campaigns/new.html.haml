@@ -1,0 +1,8 @@
+.row
+  .large-12.columns
+    %h1 Nouvelle campagne
+.row
+  .large-12.columns
+    = form_for @campaign do |form|
+      = render partial: "campaign_fields", locals: {form: form}
+      = form.submit "Créer la campagne", class: "button success"
