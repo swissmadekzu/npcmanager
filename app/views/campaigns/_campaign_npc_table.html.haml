@@ -1,13 +1,16 @@
 %table{style: "width: 100%"}
   %thead
     %tr
-      %th{width: 300} Nom
-      %th{width: 150} Groupe
+      %th{style: "width:45%"} Nom
+      %th{style: "width:30%"} Groupe
       %th Actions
   %tbody
     - @campaign.npcs.each do |npc|
       %tr
-        %td= npc.name
+        %td= link_to npc.name, npc_path(npc)
         %td= npc.npc_group.nil? ? "-" : npc.npc_group.name
         %td
-%p= link_to "Nouveau PNJ", "#", class: "button success"
+          = link_to "Modifier", edit_npc_path(npc)
+          |
+          = link_to "Supprimer", npc_path(npc), method: :delete, confirm: "Êtes-vous sûr(e) de vouloir supprimer ce PNJ ? Cette action est irréversible." 
+%p= link_to "Nouveau PNJ", new_npc_path(campaign_id: @campaign.id), class: "button success"

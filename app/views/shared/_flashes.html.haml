@@ -1,7 +1,11 @@
 .row
-  .twelve.columns
+  .large-12.columns
     - flash.each do |key, value|
       - if key == :error
-        %li.alert.danger= value
+        %div.alert-box.alert{"data-alert" => true}
+          = value
+          = link_to "×", "#", class: "close"
       - elsif key == :notice
-        %li.alert.success= value
+        %div.alert-box.success{"data-alert" => true}
+          = value
+          = link_to "×", "#", class: "close"

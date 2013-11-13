@@ -1,5 +1,5 @@
 %tr
-  %td= campaign.name
+  %td= link_to campaign.name, campaign_path(campaign)
   %td= campaign.npcs.count
   %td= campaign.npc_groups.count
   %td

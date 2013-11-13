@@ -1,0 +1,21 @@
+= form.hidden_field :campaign_id
+.row
+  .large-12.columns
+    = form.label :name, "Nom du PNJ"
+    = form.text_field :name
+.row
+  .large-12.columns
+    = form.label :npc_group_id, "Groupe"
+    = form.collection_select :npc_group_id, @campaign.npc_groups.all, :id, :name, {include_blank: true}, {style: "display:none;"}
+.row
+  .large-12.columns
+    = form.label :catchphrase, "Citation culte"
+    = form.text_field :catchphrase
+.row
+  .large-12.columns
+    = form.label :description, "Description"
+    = form.text_area :description
+.row
+  .large-12.columns
+    = form.label :temper, "Caractère"
+    = form.text_area :temper

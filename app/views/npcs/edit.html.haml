@@ -1,0 +1,12 @@
+.row
+  .large-12.columns
+    %h2 
+      Editer le PNJ
+      = @npc.name
+      %small= @campaign.name
+
+.row
+  .large-12.columns
+    = form_for @npc, html: {class: "custom"} do |form|
+      = render partial: "form", locals: {form: form}
+      = form.submit "Mettre le PNJ à jour"

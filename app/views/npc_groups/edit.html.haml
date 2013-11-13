@@ -1,0 +1,12 @@
+.row
+  .large-12.columns
+    %h2 
+      Editer
+      = @npc_group.name
+      %small= @campaign.name
+
+.row
+  .large-12.columns
+    = form_for @npc_group do |form|
+      = render partial: "form", locals: {form: form}
+      = form.submit "Créer le groupe"

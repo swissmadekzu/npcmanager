@@ -1,0 +1,32 @@
+.row
+  .large-12.columns
+    %h2
+      = @npc.name
+      %small= link_to @npc.campaign.name, campaign_path(@npc.campaign)
+    - if @npc.npc_group.present?
+      %h4= @npc.npc_group.name
+.row
+  .large-12.columns
+    %blockquote
+      = @npc.catchphrase
+      %cite= @npc.name
+.row
+  .large-6.columns
+    %h3 Description
+    %p= @npc.description
+  .large-6.columns
+    %h3 Caractère
+    %p= @npc.temper
+
+.row
+  .large-12.columns
+    %h3 Liens avec d'autres PNJ
+    %table{style: "width:100%;"}
+      %thead
+        %tr
+          %th{style: "width:35%;"} Nom
+          %th{style: "width:35%;"} Relation
+          %th Actions
+      %tbody
+
+

@@ -1,0 +1,26 @@
+.row
+  .large-12.columns
+    %h2
+      = @npc_group.name
+      %small= @npc_group.campaign.name
+
+.row
+  .large-6.columns
+    %h3 Buts
+    %p= @npc_group.goals
+  .large-6.columns
+    %h3 Moyens
+    %p= @npc_group.powers
+
+.row
+  .large-12.columns
+    %h3 PNJs
+    %table
+      %thead
+        %tr
+          %th{style: "width:70%;"} Nom
+          %th Actions
+      %tbody
+        = render partial: "npc_group_npc", collection: @npc_group.npcs, as: :npc
+
+
